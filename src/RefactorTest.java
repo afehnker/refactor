@@ -2,7 +2,7 @@ public class RefactorTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-        Customer Pete = new Customer("Peter");
+        Customer Pete = new Customer("Pete");
         Movie Shouf = new Movie("Shouf Shouf Habibi",1);
         Movie Black = new Movie("Black Book",2);
         
