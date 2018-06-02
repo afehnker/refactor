@@ -26,7 +26,7 @@ class Customer {
 			
 			Rental each = (Rental) rentals.nextElement();
 			// determine amounts for each line
-			double rentalAmount = each.amountFor();
+			
 			// add frequent renter points
 			frequentRenterPoints++;
 
@@ -34,8 +34,8 @@ class Customer {
 			if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1)
 				frequentRenterPoints++;
 			// show figures for this rental
-			result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(rentalAmount) + "\n";
-			totalAmount += rentalAmount;
+			result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each.amountFor()) + "\n";
+			totalAmount += each.amountFor();
 		}
 
 		// add footer lines
