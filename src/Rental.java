@@ -16,31 +16,12 @@ class Rental {
 	}
 
 	double amountFor() {
-		double thisAmount = 0;
-		switch (getMovie().getPriceCode()) {
-			case Movie.REGULAR:
-				thisAmount += 2;
-				if (getDaysRented() > 2)
-					thisAmount += (getDaysRented() - 2) * 1.5;
-				break;
-			case Movie.NEW_RELEASE:
-				thisAmount += getDaysRented() * 3;
-				break;
-			case Movie.CHILDRENS:
-				thisAmount += 1.5;
-				if (getDaysRented() > 3)
-					thisAmount += (getDaysRented() - 3) * 1.5;
-				break;
-		}
-		return thisAmount;
+		
+		return _movie.getCharge(_daysRented);
 	}
 
 	int getFrequentRenterPoints() {
-		// add bonus for a two day new release rental
-		int points=1;
-		if ((getMovie().getPriceCode() == Movie.NEW_RELEASE) && getDaysRented() > 1) {
-			points=2;			
-		}			
-		return points;
+		return _movie.getFrequentRenterPoints(_daysRented);
+		
 	}
 }
